@@ -1,0 +1,22 @@
+$('#dialog h3').html("<i class='glyphicon glyphicon-plus'></i> <%= params[:date].to_date.strftime("%m월 %d일") %>의 활동 수정하");
+$('.modal-body').html('<%= j render 'form' %>');
+$('#dialog').modal("show");
+
+var n = $('#preview_p').text().length;
+
+if(n>0){
+$('#preview').show();
+$('#preview_p').show();
+$('#comment').hide();
+}
+
+$('label:has(input:radio:checked)').addClass('active');
+$('label:has(input:radio:not(:checked))').removeClass('active');
+$('#preview').click(function(){
+	$('#preview').hide();
+	$('#comment').show();
+});
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

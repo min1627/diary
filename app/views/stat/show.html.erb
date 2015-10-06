@@ -1,0 +1,45 @@
+<%=	render :partial => 'layouts/header' %>
+
+<div id="stat">
+	<div id="week_ago">
+		<div class="container">
+			<%= render partial: "shared/flash_messages", flash: flash %>
+
+			<h3> <%= @current_user.name %> 님의 삶 </h3>
+			<h3 id="change_week"><%= link_to "<", date: @date.prev_week %>
+			<%= (@date-7).strftime("%m월 %d일") %> ~ <%= @date.strftime("%m월 %d일") %>
+			<%= link_to ">", date: @date.next_week %></h3>
+			<div class="row center-block">
+				<div class="col-md-4 center-block">
+					<h4>음주</h4>
+					<h1><%= prettify(@activity.where(:date => @week).sum(:alcohol)) %> 병</h1>
+				</div>
+				<div class="col-md-4 center-block">
+					<h4>운동</h4>
+					<h1><%= prettify(@activity.where(:date => @week).sum(:exercise)*60) %> 분</h1>
+				</div>
+				<div class="col-md-4 center-block">
+					<h4>독서</h4>
+					<h1><%= prettify(@activity.where(:date => @week).sum(:reading)) %> 시간</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="graph">
+		<div class="container">
+			<div class="row center-block">
+				<span class="title"><h3>음주</h3></span>
+					<%= column_chart @activity.order(date: :desc).limit(30).group(:date).sum(:alcohol).sort.map {|k,v| {k.strftime("%m/%d") => v }.flatten}, colors: ["#d9534f"], library: {vAxis: {format: '#.#병', maxValue:2}, bar: {groupWidth:'30%'}} %>
+			</div>
+			<div class="row center-block">
+				<span class="title"><h3>운동</h3></span>
+					<%= column_chart @activity.order(date: :desc).limit(30).group(:date).sum(:exercise).sort.map {|k,v| {k.strftime("%m/%d") => v*60 }.flatten}, colors: ["#5cb85c"], library: {vAxis: {format: '#분', maxValue:60}, bar: {groupWidth:'30%'}} %>
+			</div>
+			<div class="row center-block">
+				<span class="title"><h3>독서</h3></span>
+					<%= column_chart @activity.order(date: :desc).limit(30).group(:date).sum(:reading).sort.map {|k,v| {k.strftime("%m/%d") => v }.flatten}, colors: ["#5bc0de"], library: {vAxis: {format: '#.#시간', maxValue:3}, bar: {groupWidth:'30%'}} %>
+			</div>
+		</div>
+	</div>
+</div>
