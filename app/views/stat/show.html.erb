@@ -10,17 +10,17 @@
 			<%= (@date-7).strftime("%m월 %d일") %> ~ <%= @date.strftime("%m월 %d일") %>
 			<%= link_to ">", date: @date.next_week %></h3>
 			<div class="row center-block">
-				<div class="col-md-4 center-block">
+				<div id="box_alcohol" class="col-md-4 center-block">
 					<h4>음주</h4>
-					<h1><%= prettify(@activity.where(:date => @week).sum(:alcohol)) %> 병</h1>
+					<h1><%= prettify(@activity.where(:date => @week).sum(:alcohol)) %>병</h1>
 				</div>
-				<div class="col-md-4 center-block">
+				<div id="box_exercise" class="col-md-4 center-block">
 					<h4>운동</h4>
-					<h1><%= prettify(@activity.where(:date => @week).sum(:exercise)*60) %> 분</h1>
+					<h1><%= prettify(@activity.where(:date => @week).sum(:exercise)*60) %>분</h1>
 				</div>
-				<div class="col-md-4 center-block">
+				<div id="box_reading" class="col-md-4 center-block">
 					<h4>독서</h4>
-					<h1><%= prettify(@activity.where(:date => @week).sum(:reading)) %> 시간</h1>
+					<h1><%= prettify(@activity.where(:date => @week).sum(:reading)) %>시간</h1>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-$('#dialog h3').html("<i class='glyphicon glyphicon-plus'></i> <%= params[:date].to_date.strftime("%m월 %d일") %>의 활동 수정하");
+$('#dialog h3').html("<i class='glyphicon glyphicon-plus'></i> <%= params[:date].to_date.strftime("%m월 %d일") %>의 활동 수정하기");
 $('.modal-body').html('<%= j render 'form' %>');
 $('#dialog').modal("show");
 
