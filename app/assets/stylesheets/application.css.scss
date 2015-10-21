@@ -11,7 +11,7 @@
  * file per style scope.
  *
  */
- 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -150,27 +150,30 @@ overflow:hidden;
 	font-size: 20px;
 	color: black;
 	font-weight: bold;
+
+
+	.btn-info, .btn-info:focus {
+		background-color: #0cfe84;
+		border-color: #0cfe84;
+		outline: none !important;
+		line-height:3;
 	}
-}
 
-.btn-info, .btn-info:focus {
-	background-color: #0cfe84;
-	border-color: #0cfe84;
-	outline: none !important;
-}
+	.btn-info:hover {
+		background-color: #0fea7b;
+		border-color: #0fea7b;
+		outline: none !important;
+	}
 
-.btn-info:hover {
-	background-color: #0fea7b;
-	border-color: #0fea7b;
-	outline: none !important;
-}
+	.btn-info.active.focus, .btn-info.active:focus, .btn-info.active:hover, .btn-info:active.focus, .btn-info:active:focus, .btn-info:active:hover {
+		background-color: #0fea7b;
+		border-color: #0fea7b;
+		outline: none !important;
+		box-shadow: none;
+	}
 
-.btn-info.active.focus, .btn-info.active:focus, .btn-info.active:hover, .btn-info:active.focus, .btn-info:active:focus, .btn-info:active:hover {
-	background-color: #0fea7b;
-	border-color: #0fea7b;
-	outline: none !important;
-	box-shadow: none;
-}
+	}
+	}
 
 
 #intro {
