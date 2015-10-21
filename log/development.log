@@ -26631,3 +26631,22 @@ Started GET "/assets/application.self-701c516bc4a6fb03cee40ee87b53ca9c3b7b11e102
 
 
 Started GET "/assets/intro-0abd189ef8a901e295661ebeb3fbac8ec52d5ce253d726810d10bdeb6dd18650.jpg" for ::1 at 2015-10-21 14:40:46 +0900
+
+
+Started GET "/" for ::1 at 2015-10-21 15:07:45 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/home/join
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home/join" for ::1 at 2015-10-21 15:07:46 +0900
+Processing by HomeController#join as HTML
+  Rendered home/join.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2704ms (Views: 2703.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e5e259c800009efc5ff1f9440907d13c9291e15bf231f169fea5596bfaf0b5b2.css?body=1" for ::1 at 2015-10-21 15:07:48 +0900
+
+
+Started GET "/assets/intro-9f3ed257988b361fa260ccfceffb39320f894a2b4d503957863cd8da11c3606f.jpg" for ::1 at 2015-10-21 15:07:48 +0900

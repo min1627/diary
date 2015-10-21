@@ -2,82 +2,82 @@
 <%= form_for(@activity, remote:true, :html => { :role => "form" }) do |f| %>
 
 <div class="form-group">
-	<div class="btn-group" data-toggle="buttons">
-		<h3> 음주 </h3>
-	  <label class="btn btn-default active">
-		<%= f.radio_button :alcohol, "0.0", :checked => (@activity.alcohol.nil? || @activity.alcohol == 0.0), :style=>'display:none;' %> 안먹음
-	  </label>
-	  <label class="btn btn-default">
-	    <%= f.radio_button :alcohol, "0.2", :checked => (@activity.alcohol == 0.2), :style=>'display:none;' %> 맥주 쪼끔
-	  </label>
-	  <label class="btn btn-default">
-		<%= f.radio_button :alcohol, "0.5", :checked => (@activity.alcohol == 0.5), :style=>'display:none;' %> 반병
-	  </label>
-	  <label class="btn btn-default">
-		<%= f.radio_button :alcohol, "1.0", :checked => (@activity.alcohol == 1.0), :style=>'display:none;' %> 한병
-	  </label>
-	  <label class="btn btn-default">
-		<%= f.radio_button :alcohol, "1.5", :checked => (@activity.alcohol == 1.5), :style=>'display:none;' %> 한병 반
-	  </label>
-  	  <label class="btn btn-default">
-		<%= f.radio_button :alcohol, "2.0", :checked => (@activity.alcohol == 2.0), :style=>'display:none;' %> 두병 이상(꽐라)
-	  </label>
-	</div>
+  <div class="btn-group" data-toggle="buttons">
+    <h3> 음주 </h3>
+    <label class="btn btn-default active">
+      <%= f.radio_button :alcohol, "0.0", :checked => (@activity.alcohol.nil? || @activity.alcohol == 0.0), :style=>'display:none;' %> 안먹음
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :alcohol, "0.2", :checked => (@activity.alcohol == 0.2), :style=>'display:none;' %> 맥주 쪼끔
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :alcohol, "0.5", :checked => (@activity.alcohol == 0.5), :style=>'display:none;' %> 반병
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :alcohol, "1.0", :checked => (@activity.alcohol == 1.0), :style=>'display:none;' %> 한병
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :alcohol, "1.5", :checked => (@activity.alcohol == 1.5), :style=>'display:none;' %> 한병 반
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :alcohol, "2.0", :checked => (@activity.alcohol == 2.0), :style=>'display:none;' %> 두병 이상(꽐라)
+    </label>
+  </div>
 </div>
 
 <div class="form-group">
-	<div class="btn-group" data-toggle="buttons">
-		<h3> 운동 </h3>
-	  <label class="btn btn-default active">
-		<%= f.radio_button :exercise, "0.0", :checked => (@activity.exercise.nil? || @activity.exercise == 0.0), :style=>'display:none;' %> 안함
-	  </label>
-	  <label class="btn btn-default">
-	    <%= f.radio_button :exercise, "0.25", :checked => (@activity.exercise == 0.25), :style=>'display:none;' %> 15분
-	  </label>
-	  <label class="btn btn-default">
-		<%= f.radio_button :exercise, "0.5", :checked => (@activity.exercise == 0.5), :style=>'display:none;' %> 30분
-	  </label>
-	  <label class="btn btn-default">
-		<%= f.radio_button :exercise, "0.75", :checked => (@activity.exercise == 0.75), :style=>'display:none;' %> 45분
-	  </label>
-	  <label class="btn btn-default">
-		<%= f.radio_button :exercise, "1.0", :checked => (@activity.exercise == 1.0), :style=>'display:none;' %> 1시간 이상
-	  </label>
-	</div>
+  <div class="btn-group" data-toggle="buttons">
+    <h3> 운동 </h3>
+    <label class="btn btn-default active">
+      <%= f.radio_button :exercise, "0.0", :checked => (@activity.exercise.nil? || @activity.exercise == 0.0), :style=>'display:none;' %> 안함
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :exercise, "0.25", :checked => (@activity.exercise == 0.25), :style=>'display:none;' %> 15분
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :exercise, "0.5", :checked => (@activity.exercise == 0.5), :style=>'display:none;' %> 30분
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :exercise, "0.75", :checked => (@activity.exercise == 0.75), :style=>'display:none;' %> 45분
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :exercise, "1.0", :checked => (@activity.exercise == 1.0), :style=>'display:none;' %> 1시간 이상
+    </label>
+  </div>
 </div>
 
 <div class="form-group">
-	<div class="btn-group" data-toggle="buttons">
-		<h3> 독서 </h3>
-	  <label class="btn btn-default active">
-		<%= f.radio_button :reading, "0.0", :checked => (@activity.reading.nil? || @activity.reading == 0.0), :style=>'display:none;' %> 안읽음
-	  </label>
-	  <label class="btn btn-default">
-	    <%= f.radio_button :reading, "1.0", :checked => (@activity.reading == 1.0), :style=>'display:none;' %> 1시간 이하 
-	 </label>
-	  <label class="btn btn-default">
-		<%= f.radio_button :reading, "2.0", :checked => (@activity.reading == 2.0), :style=>'display:none;' %> 2시간
-	  </label>
-	  <label class="btn btn-default">
-		<%= f.radio_button :reading, "3.0", :checked => (@activity.reading == 3.0), :style=>'display:none;' %> 3시간
-	  </label>
-	  <label class="btn btn-default">
-		<%= f.radio_button :reading, "4.0", :checked => (@activity.reading == 4.0), :style=>'display:none;' %> 4시간 이상
-	  </label>
-	</div>
+  <div class="btn-group" data-toggle="buttons">
+    <h3> 독서 </h3>
+    <label class="btn btn-default active">
+      <%= f.radio_button :reading, "0.0", :checked => (@activity.reading.nil? || @activity.reading == 0.0), :style=>'display:none;' %> 안읽음
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :reading, "1.0", :checked => (@activity.reading == 1.0), :style=>'display:none;' %> 1시간 이하 
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :reading, "2.0", :checked => (@activity.reading == 2.0), :style=>'display:none;' %> 2시간
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :reading, "3.0", :checked => (@activity.reading == 3.0), :style=>'display:none;' %> 3시간
+    </label>
+    <label class="btn btn-default">
+      <%= f.radio_button :reading, "4.0", :checked => (@activity.reading == 4.0), :style=>'display:none;' %> 4시간 이상
+    </label>
+  </div>
 </div>
 
 <div class="form-group">
-	<h3> 한줄 일기 </h3>
-		<%= f.text_area :comment, :placeholder => '한줄 일기를 써 보세요. 정신건강이 좋아집니다.', id: "comment", class: "form-control", rows:8 %>
-		<div id="preview" class="data-tooltip" data-toggle="tooltip" title="수정하기" style="display:none">
-			<p id="preview_p" class="lead" style="display:none"><%= @activity.comment %></p>
-		</div>
+  <h3> 한줄 일기 </h3>
+  <%= f.text_area :comment, :placeholder => '한줄 일기를 써 보세요. 정신건강이 좋아집니다.', id: "comment", class: "form-control", rows:8 %>
+  <div id="preview" class="data-tooltip" data-toggle="tooltip" title="수정하기" style="display:none">
+    <p id="preview_p" class="lead" style="display:none"><%= @activity.comment %></p>
+  </div>
 </div>
 <%= f.hidden_field :date, value: params[:date] %>
 <%= f.hidden_field :user_id, value: @current_user.id %>
 
 <div class="form-group">
-    <%= f.submit @activity.new_record? ? "추가하기" : "수정하기", :class => "btn btn-primary" %>
+  <%= f.submit @activity.new_record? ? "추가하기" : "수정하기", :class => "btn btn-primary" %>
 </div>
 <% end %>

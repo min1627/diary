@@ -1,46 +1,46 @@
-<%=	render :partial => 'layouts/header' %>
+<%= render :partial => 'layouts/header' %>
 <% if @activity.count == 0 %>
-	<%= render 'intro' %>
-<script type="text/javascript">
-    $(window).load(function(){
-        $('#intro').modal('show');
-    });
-</script>
+  <%= render 'intro' %>
+  <script type="text/javascript">
+      $(window).load(function(){
+          $('#intro').modal('show');
+      });
+  </script>
 <% end %>
 
 <div id="diary">
-	<div class="container">
-		<h3 id="month">
-			<%= link_to "<", date: @date.prev_month %>
-			<%= @date.strftime("%Y년 %m월") %>
-			<%= link_to ">", date: @date.next_month %>
-		</h3>	
-	</div>
-	<div class="container">
-		<%= calendar @date do |date| %>
-				<% if @activity_by_date[date] %>
-					<% @activity_by_date[date].each do |a| %>
-						<% if a.user_id == @current_user.id %>
-								<div class="data-tooltip" data-toggle="tooltip" title="수정하기">
-							<%= link_to diary_edit_path(date), :remote => true, :format => 'js' do %>
-								<span><%= date.day %></span>
-									<div class="label-wrapper"><%= table_cell("alcohol", a.alcohol) %></div>
-									<div class="label-wrapper"><%= table_cell("exercise", a.exercise) %></div>
-									<div class="label-wrapper"><%= table_cell("reading", a.reading) %></div>
-									<div class="label-wrapper"><%= table_cell("comment", a.comment) %></div>
-							<% end %>
-								</div>
-						<% end %>
-					<% end %>
-				<% elsif date <= Time.zone.today.to_date %>
-				<div class="data-tooltip" data-toggle="tooltip" title="추가하기">
-					<%= link_to diary_new_path(date), :remote => true, :format => 'js' do %>
-					<% end %>
-				<% end %>
-				<span><%= date.day %></span>
-				</div>	
-		<% end %>
-	</div>
-	<%= render 'dialog' %>
+  <div class="container">
+    <h3 id="month">
+      <%= link_to "<", date: @date.prev_month %>
+      <%= @date.strftime("%Y년 %m월") %>
+      <%= link_to ">", date: @date.next_month %>
+    </h3> 
+  </div>
+  <div class="container">
+    <%= calendar @date do |date| %>
+        <% if @activity_by_date[date] %>
+          <% @activity_by_date[date].each do |a| %>
+            <% if a.user_id == @current_user.id %>
+                <div class="data-tooltip" data-toggle="tooltip" title="수정하기">
+              <%= link_to diary_edit_path(date), :remote => true, :format => 'js' do %>
+                <span><%= date.day %></span>
+                  <div class="label-wrapper"><%= table_cell("alcohol", a.alcohol) %></div>
+                  <div class="label-wrapper"><%= table_cell("exercise", a.exercise) %></div>
+                  <div class="label-wrapper"><%= table_cell("reading", a.reading) %></div>
+                  <div class="label-wrapper"><%= table_cell("comment", a.comment) %></div>
+              <% end %>
+                </div>
+            <% end %>
+          <% end %>
+        <% elsif date <= Time.zone.today.to_date %>
+        <div class="data-tooltip" data-toggle="tooltip" title="추가하기">
+          <%= link_to diary_new_path(date), :remote => true, :format => 'js' do %>
+          <% end %>
+        <% end %>
+        <span><%= date.day %></span>
+        </div>  
+    <% end %>
+  </div>
+  <%= render 'dialog' %>
 
 </div>

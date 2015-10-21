@@ -17,8 +17,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
-gem "simple_calendar", "~> 2.0"
-
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
