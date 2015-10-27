@@ -1,0 +1,12 @@
+I"<(function() {
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+    return this["new"] = function() {
+      $('#dialog').modal("show");
+      $('label:has(input:radio:checked)').addClass('active');
+      return $('label:has(input:radio:not(:checked))').removeClass('active');
+    };
+  });
+
+}).call(this);
+:ET

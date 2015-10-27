@@ -1,0 +1,13 @@
+I"ã(function() {
+  $(function() {
+    return $('[data-toggle="tooltip"]').tooltip();
+  });
+
+  this.intro_modal(function() {
+    return $(window).load(function() {
+      return '#intro'.modal('show');
+    });
+  });
+
+}).call(this);
+:ET

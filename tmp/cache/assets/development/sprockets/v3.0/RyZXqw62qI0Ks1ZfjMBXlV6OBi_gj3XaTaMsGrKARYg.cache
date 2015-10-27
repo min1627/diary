@@ -1,0 +1,11 @@
+I"¿(function() {
+  $(function() {
+    var intro;
+    $('[data-toggle="tooltip"]').tooltip();
+    return intro = function() {
+      return $('#intro').modal('show');
+    };
+  });
+
+}).call(this);
+:ET
