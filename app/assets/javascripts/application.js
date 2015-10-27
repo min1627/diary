@@ -17,7 +17,3 @@
 //= require jsapi
 //= require chartkick
 //= require_tree .
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})

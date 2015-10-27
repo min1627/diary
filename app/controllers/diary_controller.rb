@@ -1,7 +1,7 @@
 class DiaryController < ApplicationController
 
   def list    
-    @activity = Activity.all
+    @activity = Activity.where(:user_id => @current_user.id)
     @activity_by_date = @activity.group_by(&:date) 
     @date = params[:date] ? Date.parse(params[:date]) : Time.zone.today.to_date
   end

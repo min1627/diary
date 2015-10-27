@@ -1,11 +1,7 @@
 <%= render :partial => 'layouts/header' %>
 <% if @activity.count == 0 %>
   <%= render 'intro' %>
-  <script type="text/javascript">
-      $(window).load(function(){
-          $('#intro').modal('show');
-      });
-  </script>
+  <%= javascript_tag "intro_modal()" %>
 <% end %>
 
 <div id="diary">
@@ -20,17 +16,15 @@
     <%= calendar @date do |date| %>
         <% if @activity_by_date[date] %>
           <% @activity_by_date[date].each do |a| %>
-            <% if a.user_id == @current_user.id %>
                 <div class="data-tooltip" data-toggle="tooltip" title="수정하기">
-              <%= link_to diary_edit_path(date), :remote => true, :format => 'js' do %>
-                <span><%= date.day %></span>
+                  <%= link_to diary_edit_path(date), :remote => true, :format => 'js' do %>
+                  <span><%= date.day %></span>
                   <div class="label-wrapper"><%= table_cell("alcohol", a.alcohol) %></div>
                   <div class="label-wrapper"><%= table_cell("exercise", a.exercise) %></div>
                   <div class="label-wrapper"><%= table_cell("reading", a.reading) %></div>
                   <div class="label-wrapper"><%= table_cell("comment", a.comment) %></div>
-              <% end %>
+                  <% end %>
                 </div>
-            <% end %>
           <% end %>
         <% elsif date <= Time.zone.today.to_date %>
         <div class="data-tooltip" data-toggle="tooltip" title="추가하기">
@@ -42,5 +36,3 @@
     <% end %>
   </div>
   <%= render 'dialog' %>
-
-</div>

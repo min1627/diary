@@ -11,7 +11,7 @@ data-keyboard="true">
       data-dismiss="modal" 
       aria-label="Close">
       <span aria-hidden="true">&times;</span></button>
-      <h3 class="modal-title"></h3>
+      <h3 class="modal-title"><%= @date.to_date.strftime("%m월 %d일") %></h3>
     </div>
     <div class="modal-body">
     </div>
