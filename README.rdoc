@@ -1,28 +1,18 @@
-== README
+== REA:Diary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+http://readiary.herokuapp.com
 
-Things you may want to cover:
+리다이어리는 1주일간의 독서/운동/음주량(Read, Exercise, Alcohol...-_-)을 측정해서 이번주는 제발 좀 다르게 사는데 도움을 주는 도구입니다. 물론 당신이 이 도구를 매일매일 기록할 정도로 성실하다면 당신은 이 도구가 아마 필요 없을 것입니다. 후후후..
 
-* Ruby version
+Ruby On Rails와 Heroku를 써서 만들었습니다.
 
-* System dependencies
+기능 : 
 
-* Configuration
+* 매일매일 음주/운동/독서량을 원클릭으로 편하게 기록
 
-* Database creation
+* 굳이 한줄 일기가 쓰고 싶다면 ("술 먹지 말걸" 등) 기록 가능 
 
-* Database initialization
+* 음주/운동/독서량을 모아서 1주일 단위로 확인 (매일매일 기록만 해놨다면)
 
-* How to run the test suite
+* 그래프로 음주/운동/독서량을 한 눈에
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
