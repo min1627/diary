@@ -1,17 +1,13 @@
-<% if @current_user %>
-  <%= redirect_to "/diary/list" %>
-<% else %>
-  <div id="join">
-    <div class="container">
-      <div id="background">
-        <div id="slogan">
-          <%= image_tag("slogan.png") %>
-        </div>
-        <div id="sign_in_wrap">
-          <div id="sign_in">
-            <a href="/auth/facebook" id="sign_in" role="button" class="btn btn-info btn-block">페이스북 계정으로 시작</a>>
-        </div>
+<div id="join">
+  <div class="container">
+    <div id="background">
+      <div id="slogan">
+        <%= image_tag("slogan.png") %>
+      </div>
+      <div id="sign_in_wrap">
+        <div id="sign_in">
+          <a href="/auth/facebook" id="sign_in" role="button" class="btn btn-info btn-block">페이스북 계정으로 시작</a>>
       </div>
     </div>
   </div>
-<% end %>
+</div>
