@@ -3,7 +3,9 @@
 <div id="stat">
 	<div id="week_ago">
 		<div class="container">
-			<%= render partial: "shared/flash_messages", flash: flash %>
+			<% if @activity.count == 0 %>
+				<%= render partial: "shared/flash_messages", flash: flash %>
+			<% end %>
 
 			<h3> <%= @current_user.name %> 님의 삶 </h3>
 			<h3 id="change_week"><%= link_to "<", date: @date.prev_week %>

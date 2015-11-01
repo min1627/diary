@@ -47509,3 +47509,783 @@ Started GET "/assets/stat.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450
 
 
 Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-01 16:13:08 +0900
+
+
+Started GET "/" for ::1 at 2015-11-01 16:48:17 +0900
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/home/join
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home/join" for ::1 at 2015-11-01 16:48:17 +0900
+Processing by HomeController#join as HTML
+  Rendered home/join.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 172ms (Views: 171.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-1603d3cd2646fee4b8ed6c678044e085b2edc053dedaf0e05110942d6d7161c4.css?body=1" for ::1 at 2015-11-01 16:48:18 +0900
+
+
+Started GET "/assets/diary.self-2cb94d916c9b01e5ff7b73baaea80fce5f8dd0f649ac803a8c3dda1486372a4e.js?body=1" for ::1 at 2015-11-01 16:48:18 +0900
+
+
+Started GET "/auth/facebook" for ::1 at 2015-11-01 16:48:19 +0900
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for ::1 at 2015-11-01 16:48:20 +0900
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQC2oJs3a4Xi5QRn8oEo1bLw_a3jEJrIzI_3wYsZ5wMoT7RekuZcDiP7MixhqAptXj8N2E6FlSyt9uszpad2X2h2rW4K01VWSamTCFrN_Wgw-6MfWoW9BUURwsUzWU1bUY5xbUxGzOfBReHGpMoL3t3m0cyu5_qvlUVEn3LcrnXhJgsejmsyWEGnGmriLdBH-spwpv16bX0YXspFqBYx4UMTTOgI_8V9x_2xMCzIxIuyQZQ7Y5VTgHnDOGhZCm-DezZ1hPGYN62P6Ua1bfqO7F38zl4BFk-ErontsRuttXa14uHVOTdR5etVcPcanar13163MIN2JY9g6MjHZrm86thj" for ::1 at 2015-11-01 16:48:20 +0900
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQC2oJs3a4Xi5QRn8oEo1bLw_a3jEJrIzI_3wYsZ5wMoT7RekuZcDiP7MixhqAptXj8N2E6FlSyt9uszpad2X2h2rW4K01VWSamTCFrN_Wgw-6MfWoW9BUURwsUzWU1bUY5xbUxGzOfBReHGpMoL3t3m0cyu5_qvlUVEn3LcrnXhJgsejmsyWEGnGmriLdBH-spwpv16bX0YXspFqBYx4UMTTOgI_8V9x_2xMCzIxIuyQZQ7Y5VTgHnDOGhZCm-DezZ1hPGYN62P6Ua1bfqO7F38zl4BFk-ErontsRuttXa14uHVOTdR5etVcPcanar13163MIN2JY9g6MjHZrm86thj", "provider"=>"facebook"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "1059716027426655"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-11-01 16:48:21 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/diary/list
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/diary/list" for ::1 at 2015-11-01 16:48:21 +0900
+Processing by DiaryController#list as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActivity Load (0.1ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered diary/_intro.html.erb (3.6ms)
+  Rendered diary/_dialog.html.erb (0.1ms)
+  Rendered diary/list.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 173ms (Views: 167.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/diary/new/2015-10-29" for ::1 at 2015-11-01 16:48:25 +0900
+Processing by DiaryController#new as JS
+  Parameters: {"date"=>"2015-10-29"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered diary/_form.html.erb (20.5ms)
+  Rendered diary/new.js.erb (30.4ms)
+Completed 200 OK in 48ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/diary" for ::1 at 2015-11-01 16:48:28 +0900
+Processing by DiaryController#create as JS
+  Parameters: {"utf8"=>"✓", "activity"=>{"alcohol"=>"0.5", "exercise"=>"0.75", "reading"=>"0.0", "comment"=>"", "date"=>"2015-10-29", "user_id"=>"1"}, "commit"=>"추가하기"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "activities" ("user_id", "date", "alcohol", "exercise", "reading", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 1], ["date", "2015-10-29"], ["alcohol", 0.5], ["exercise", 0.75], ["reading", 0.0], ["comment", ""], ["created_at", "2015-11-01 16:48:28.298071"], ["updated_at", "2015-11-01 16:48:28.298071"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  Rendered diary/create.js.erb (0.5ms)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/diary/list" for ::1 at 2015-11-01 16:48:28 +0900
+Processing by DiaryController#list as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered diary/_dialog.html.erb (0.1ms)
+  Rendered diary/list.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 247ms (Views: 242.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/application.self-1603d3cd2646fee4b8ed6c678044e085b2edc053dedaf0e05110942d6d7161c4.css?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/jsapi.self-1cca3bb31f98beb658b91762583bed5e7a2834e8019c372c0491818635efa89e.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/chartkick.self-767a86f502825bd83be8240c9952f03a972f3c42d4c4ccfdb42b6070c5348479.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/diary.self-2cb94d916c9b01e5ff7b73baaea80fce5f8dd0f649ac803a8c3dda1486372a4e.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/stat.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-01 16:48:28 +0900
+
+
+Started GET "/stat" for ::1 at 2015-11-01 16:48:29 +0900
+Processing by StatController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered shared/_flash_messages.html.erb (0.1ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("activities"."alcohol") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("activities"."exercise") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("activities"."reading") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT  SUM("activities"."alcohol") AS sum_alcohol, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT  SUM("activities"."exercise") AS sum_exercise, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT  SUM("activities"."reading") AS sum_reading, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30  [["user_id", 1]]
+  Rendered stat/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 132ms (Views: 127.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/diary/list" for ::1 at 2015-11-01 16:48:33 +0900
+Processing by DiaryController#list as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mActivity Load (0.1ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered diary/_dialog.html.erb (0.3ms)
+  Rendered diary/list.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 117ms (Views: 115.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stat" for ::1 at 2015-11-01 16:48:34 +0900
+Processing by StatController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered shared/_flash_messages.html.erb (0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT SUM("activities"."alcohol") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("activities"."exercise") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("activities"."reading") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT  SUM("activities"."alcohol") AS sum_alcohol, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT  SUM("activities"."exercise") AS sum_exercise, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT  SUM("activities"."reading") AS sum_reading, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30[0m  [["user_id", 1]]
+  Rendered stat/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 117ms (Views: 114.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/diary/list" for ::1 at 2015-11-01 16:48:38 +0900
+Processing by DiaryController#list as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActivity Load (0.1ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered diary/_dialog.html.erb (0.0ms)
+  Rendered diary/list.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 103ms (Views: 101.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/diary/new/2015-10-28" for ::1 at 2015-11-01 16:48:39 +0900
+Processing by DiaryController#new as JS
+  Parameters: {"date"=>"2015-10-28"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered diary/_form.html.erb (1.8ms)
+  Rendered diary/new.js.erb (8.8ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/diary" for ::1 at 2015-11-01 16:48:42 +0900
+Processing by DiaryController#create as JS
+  Parameters: {"utf8"=>"✓", "activity"=>{"alcohol"=>"1.0", "exercise"=>"0.75", "reading"=>"0.0", "comment"=>"", "date"=>"2015-10-28", "user_id"=>"1"}, "commit"=>"추가하기"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "activities" ("user_id", "date", "alcohol", "exercise", "reading", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 1], ["date", "2015-10-28"], ["alcohol", 1.0], ["exercise", 0.75], ["reading", 0.0], ["comment", ""], ["created_at", "2015-11-01 16:48:42.709330"], ["updated_at", "2015-11-01 16:48:42.709330"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  Rendered diary/create.js.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/diary/list" for ::1 at 2015-11-01 16:48:42 +0900
+Processing by DiaryController#list as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActivity Load (0.1ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered diary/_dialog.html.erb (0.1ms)
+  Rendered diary/list.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 198ms (Views: 194.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-01 16:48:42 +0900
+
+
+Started GET "/assets/application.self-1603d3cd2646fee4b8ed6c678044e085b2edc053dedaf0e05110942d6d7161c4.css?body=1" for ::1 at 2015-11-01 16:48:42 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/jsapi.self-1cca3bb31f98beb658b91762583bed5e7a2834e8019c372c0491818635efa89e.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/chartkick.self-767a86f502825bd83be8240c9952f03a972f3c42d4c4ccfdb42b6070c5348479.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/diary.self-2cb94d916c9b01e5ff7b73baaea80fce5f8dd0f649ac803a8c3dda1486372a4e.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/stat.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-01 16:48:43 +0900
+
+
+Started GET "/stat" for ::1 at 2015-11-01 16:48:44 +0900
+Processing by StatController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered shared/_flash_messages.html.erb (0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("activities"."alcohol") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("activities"."exercise") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("activities"."reading") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT  SUM("activities"."alcohol") AS sum_alcohol, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT  SUM("activities"."exercise") AS sum_exercise, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT  SUM("activities"."reading") AS sum_reading, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30  [["user_id", 1]]
+  Rendered stat/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 125ms (Views: 122.1ms | ActiveRecord: 1.3ms)
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150924190342)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "username" varchar) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924190342"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateActivities (20150924190400)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "activities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924190400"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateComments (20150924190427)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "activity_id" integer, "content" varchar) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924190427"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to AddDateToActivities (20150924204913)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "activities" ADD "date" date
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924204913"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to AddColumnsToUsers (20150929144124)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "provider" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "name" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "oauth_token" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "oauth_expires_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150929144124"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to AddCoulmnToActivity (20150930001514)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" ADD "alcohol" float
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "activities" ADD "exercise" float[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "activities" ADD "reading" float
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "activities" ADD "comment" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150930001514"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/stat" for ::1 at 2015-11-01 16:51:06 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StatController#show as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/home/join
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 27ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/home/join" for ::1 at 2015-11-01 16:51:07 +0900
+Processing by HomeController#join as HTML
+  Rendered home/join.html.erb within layouts/application (112.0ms)
+Completed 200 OK in 417ms (Views: 416.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-1603d3cd2646fee4b8ed6c678044e085b2edc053dedaf0e05110942d6d7161c4.css?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/jsapi.self-1cca3bb31f98beb658b91762583bed5e7a2834e8019c372c0491818635efa89e.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/chartkick.self-767a86f502825bd83be8240c9952f03a972f3c42d4c4ccfdb42b6070c5348479.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/diary.self-2cb94d916c9b01e5ff7b73baaea80fce5f8dd0f649ac803a8c3dda1486372a4e.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/stat.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-01 16:51:07 +0900
+
+
+Started GET "/auth/facebook" for ::1 at 2015-11-01 16:51:08 +0900
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for ::1 at 2015-11-01 16:51:09 +0900
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQAVPZi48uaBFfv6ff9DdehrMSuH9QZ2wVT9WavL2BlTy6gQ7WueXK1lnQxvr7GW96Okzmq-eGhRYtR2Ev65HXX043usEOtgF5uOHPuwwUrJ2QXjcUztc_lu932Rlo1jvErmAvpoGwzZrAadv6aOVpiJT7yzUQ0CXGAsKe0YPGMbk8dh8HrfVxlB6u95QJhRpHisGMjmVvtFOKSU2-p63CuEzFtiGgmC8vNSGx4G_qi_jsJt9RAVLNquwBcaXFO7oIw-u0CgccQcZkbZEu3HTIeXhgaBUvfkX1jtkkt_zE3UE78mkBD6g5MgE6Qyl5L6KwDsWysvv8yX5T5Y2m63Db_W" for ::1 at 2015-11-01 16:51:09 +0900
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAVPZi48uaBFfv6ff9DdehrMSuH9QZ2wVT9WavL2BlTy6gQ7WueXK1lnQxvr7GW96Okzmq-eGhRYtR2Ev65HXX043usEOtgF5uOHPuwwUrJ2QXjcUztc_lu932Rlo1jvErmAvpoGwzZrAadv6aOVpiJT7yzUQ0CXGAsKe0YPGMbk8dh8HrfVxlB6u95QJhRpHisGMjmVvtFOKSU2-p63CuEzFtiGgmC8vNSGx4G_qi_jsJt9RAVLNquwBcaXFO7oIw-u0CgccQcZkbZEu3HTIeXhgaBUvfkX1jtkkt_zE3UE78mkBD6g5MgE6Qyl5L6KwDsWysvv8yX5T5Y2m63Db_W", "provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "1059716027426655"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "1059716027426655"], ["name", "Minseok Kim"], ["created_at", "2015-11-01 16:51:10.338391"], ["updated_at", "2015-11-01 16:51:10.338391"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-11-01 16:51:10 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/diary/list
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/diary/list" for ::1 at 2015-11-01 16:51:10 +0900
+Processing by DiaryController#list as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActivity Load (0.1ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered diary/_intro.html.erb (2.5ms)
+  Rendered diary/_dialog.html.erb (0.3ms)
+  Rendered diary/list.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 132ms (Views: 125.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/diary/new/2015-10-28" for ::1 at 2015-11-01 16:51:14 +0900
+Processing by DiaryController#new as JS
+  Parameters: {"date"=>"2015-10-28"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered diary/_form.html.erb (15.3ms)
+  Rendered diary/new.js.erb (23.1ms)
+Completed 200 OK in 39ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/diary" for ::1 at 2015-11-01 16:51:17 +0900
+Processing by DiaryController#create as JS
+  Parameters: {"utf8"=>"✓", "activity"=>{"alcohol"=>"0.5", "exercise"=>"0.75", "reading"=>"0.0", "comment"=>"", "date"=>"2015-10-28", "user_id"=>"1"}, "commit"=>"추가하기"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "activities" ("user_id", "date", "alcohol", "exercise", "reading", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 1], ["date", "2015-10-28"], ["alcohol", 0.5], ["exercise", 0.75], ["reading", 0.0], ["comment", ""], ["created_at", "2015-11-01 16:51:17.830049"], ["updated_at", "2015-11-01 16:51:17.830049"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  Rendered diary/create.js.erb (0.3ms)
+Completed 200 OK in 16ms (Views: 3.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/diary/list" for ::1 at 2015-11-01 16:51:17 +0900
+Processing by DiaryController#list as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered diary/_dialog.html.erb (0.2ms)
+  Rendered diary/list.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 231ms (Views: 223.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-1603d3cd2646fee4b8ed6c678044e085b2edc053dedaf0e05110942d6d7161c4.css?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/jsapi.self-1cca3bb31f98beb658b91762583bed5e7a2834e8019c372c0491818635efa89e.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/chartkick.self-767a86f502825bd83be8240c9952f03a972f3c42d4c4ccfdb42b6070c5348479.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/diary.self-2cb94d916c9b01e5ff7b73baaea80fce5f8dd0f649ac803a8c3dda1486372a4e.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/stat.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-01 16:51:18 +0900
+
+
+Started GET "/stat" for ::1 at 2015-11-01 16:51:18 +0900
+Processing by StatController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered stat/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/Users/minseok/diary/app/views/stat/show.html.erb:6: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...end=( if @activity.count == 0 );@output_buffer.safe_append='
+...                               ^
+/Users/minseok/diary/app/views/stat/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;			 end 
+         			    ^
+/Users/minseok/diary/app/views/stat/show.html.erb:48: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/minseok/diary/app/views/stat/show.html.erb:50: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/stat/show.html.erb:6: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/stat/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+  app/views/stat/show.html.erb:48: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/stat/show.html.erb:50: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (46.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.7ms)
+
+
+Started GET "/stat" for ::1 at 2015-11-01 16:51:19 +0900
+Processing by StatController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered stat/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/Users/minseok/diary/app/views/stat/show.html.erb:6: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...end=( if @activity.count == 0 );@output_buffer.safe_append='
+...                               ^
+/Users/minseok/diary/app/views/stat/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;			 end 
+         			    ^
+/Users/minseok/diary/app/views/stat/show.html.erb:48: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/minseok/diary/app/views/stat/show.html.erb:50: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/stat/show.html.erb:6: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/stat/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+  app/views/stat/show.html.erb:48: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/stat/show.html.erb:50: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (39.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (88.9ms)
+
+
+Started GET "/stat" for ::1 at 2015-11-01 16:51:36 +0900
+Processing by StatController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (0.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("activities"."alcohol") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("activities"."exercise") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("activities"."reading") FROM "activities" WHERE "activities"."user_id" = ? AND ("activities"."date" BETWEEN '2015-10-25' AND '2015-11-01')  [["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT  SUM("activities"."alcohol") AS sum_alcohol, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT  SUM("activities"."exercise") AS sum_exercise, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30  [["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT  SUM("activities"."reading") AS sum_reading, date AS date FROM "activities" WHERE "activities"."user_id" = ? GROUP BY "activities"."date"  ORDER BY "activities"."date" DESC LIMIT 30[0m  [["user_id", 1]]
+  Rendered stat/show.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 132ms (Views: 128.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-1603d3cd2646fee4b8ed6c678044e085b2edc053dedaf0e05110942d6d7161c4.css?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-11-01 16:51:36 +0900
+
+
+Started GET "/assets/jsapi.self-1cca3bb31f98beb658b91762583bed5e7a2834e8019c372c0491818635efa89e.js?body=1" for ::1 at 2015-11-01 16:51:37 +0900
+
+
+Started GET "/assets/chartkick.self-767a86f502825bd83be8240c9952f03a972f3c42d4c4ccfdb42b6070c5348479.js?body=1" for ::1 at 2015-11-01 16:51:37 +0900
+
+
+Started GET "/assets/diary.self-2cb94d916c9b01e5ff7b73baaea80fce5f8dd0f649ac803a8c3dda1486372a4e.js?body=1" for ::1 at 2015-11-01 16:51:37 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:51:37 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:51:37 +0900
+
+
+Started GET "/assets/stat.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-01 16:51:37 +0900
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-11-01 16:51:37 +0900
+
+
+Started GET "/signout" for ::1 at 2015-11-01 16:51:40 +0900
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-11-01 16:51:40 +0900
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/home/join
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home/join" for ::1 at 2015-11-01 16:51:40 +0900
+Processing by HomeController#join as HTML
+  Rendered home/join.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 110ms (Views: 109.1ms | ActiveRecord: 0.0ms)

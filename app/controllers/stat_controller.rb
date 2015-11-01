@@ -1,6 +1,6 @@
 class StatController < ApplicationController
   def show
-    @activity = Activity.all
+    @activity = Activity.where(:user_id => @current_user.id)
     @date = params[:date] ? Date.parse(params[:date]) : Time.zone.today.to_date
     @week = (@date-7)..@date
 
