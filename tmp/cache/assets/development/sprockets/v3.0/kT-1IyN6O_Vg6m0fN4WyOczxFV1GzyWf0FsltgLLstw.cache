@@ -1,5 +1,0 @@
-I"M(function() {
-  $('[data-toggle="tooltip"]').tooltip();
-
-}).call(this);
-:ET
