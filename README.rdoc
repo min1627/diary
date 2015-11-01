@@ -1,6 +1,7 @@
 == REA:Diary
 
-리다이어리는 1주일간의 독서/운동/음주(Read, Exercise, Alcohol...-_-)량을 측정해서 이번주는 다르게 사는데 도움을 주는 도구입니다. Ruby On Rails와 Heroku를 사용했습니다.
+리다이어리는 1주일간의 독서/운동/음주량(Read, Exercise, Alcohol...)을 측정해서 
+이번주는 제발 좀 다르게 사는데 도움을 주는 도구입니다. Ruby On Rails와 Heroku를 사용했습니다.
 
 기능 : 
 
